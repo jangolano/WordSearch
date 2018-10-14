@@ -114,4 +114,11 @@ public class PuzzleTest {
         assert(locations.contains(new Point(1,2)));
         assert(locations.contains(new Point(2,2)));
     }
+
+    @Test
+    public void searchVerticalFail(){
+        Puzzle puzzle = new Puzzle(data);
+        ArrayList<Point> locations = puzzle.searchVertical("KCG");
+        assert(locations.size()==0);
+    }
 }
