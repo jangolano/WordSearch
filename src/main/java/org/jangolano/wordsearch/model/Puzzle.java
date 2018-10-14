@@ -55,6 +55,11 @@ public class Puzzle {
         return findValues(word, Point::getLeft);
     }
 
+    //Find a character and then search to the right for the rest of the values with the word.
+    ArrayList<Point> searchVertical(String word){
+        return new ArrayList<Point>();
+    }
+
 
     //Search for values within the puzzle
     private ArrayList<Point> findValues(String word, Function<Point, Point > f){
