@@ -1,5 +1,6 @@
 package org.jangolano.wordsearch.model;
 
+import org.junit.Before;
 import org.junit.Test;
 
 import java.util.ArrayList;
@@ -7,14 +8,20 @@ import java.util.ArrayList;
 public class PuzzleTest {
 
     final char NULL_VALUE = '\u0000';
+    char data [][];
+
+    @Before
+    public void setData(){
+        data = new char[][]{
+                { 'A', 'B', 'C', 'D'},
+                { 'E', 'F', 'G', 'H'},
+                { 'I', 'J', 'K', 'L'},
+                { 'M', 'N', 'O', 'P'}
+        };
+    }
+
     @Test
     public void getValueAt(){
-        char [][] data = {
-            { 'A', 'B', 'C', 'D'},
-            { 'E', 'F', 'G', 'H'},
-            { 'I', 'J', 'K', 'L'},
-            { 'M', 'N', 'O', 'P'}
-        };
         Puzzle puzzle = new Puzzle(data);
         Point point = new Point(3,2);
         char value  = puzzle.getValueAt(point);
@@ -23,12 +30,6 @@ public class PuzzleTest {
 
     @Test
     public void getValueAtOutOfBounds(){
-        char [][] data = {
-                { 'A', 'B', 'C', 'D'},
-                { 'E', 'F', 'G', 'H'},
-                { 'I', 'J', 'K', 'L'},
-                { 'M', 'N', 'O', 'P'}
-        };
         Puzzle puzzle = new Puzzle(data);
         Point point = new Point(10,5);
         char value = puzzle.getValueAt(point);
@@ -37,12 +38,6 @@ public class PuzzleTest {
 
     @Test
     public void setValueAt(){
-        char [][] data = {
-                { 'A', 'B', 'C', 'D'},
-                { 'E', 'F', 'G', 'H'},
-                { 'I', 'J', 'K', 'L'},
-                { 'M', 'N', 'O', 'P'}
-        };
         Puzzle puzzle = new Puzzle(data);
         Point point = new Point(3,2);
         puzzle.setValueAt(point, 'A');
@@ -52,12 +47,6 @@ public class PuzzleTest {
 
     @Test
     public void setValueAtOutOfBounds(){
-        char [][] data = {
-                { 'A', 'B', 'C', 'D'},
-                { 'E', 'F', 'G', 'H'},
-                { 'I', 'J', 'K', 'L'},
-                { 'M', 'N', 'O', 'P'}
-        };
         Puzzle puzzle = new Puzzle(data);
         Point point = new Point(10,13);
         puzzle.setValueAt(point, 'A');
@@ -83,12 +72,6 @@ public class PuzzleTest {
 
     @Test
     public void searchHorizontal(){
-        char [][] data = {
-                { 'A', 'B', 'C', 'D'},
-                { 'E', 'F', 'G', 'H'},
-                { 'I', 'C', 'K', 'L'},
-                { 'M', 'N', 'O', 'C'}
-        };
         Puzzle puzzle = new Puzzle(data);
         ArrayList<Point> locations =puzzle.searchHorizontal("FGH");
         assert(locations.size()==3);
@@ -99,12 +82,6 @@ public class PuzzleTest {
 
     @Test
     public void searchHorizontalFail(){
-        char [][] data = {
-                { 'A', 'B', 'C', 'D'},
-                { 'E', 'F', 'G', 'H'},
-                { 'I', 'C', 'K', 'L'},
-                { 'M', 'N', 'O', 'C'}
-        };
         Puzzle puzzle = new Puzzle(data);
         ArrayList<Point> locations =puzzle.searchHorizontal("FGHI");
         assert(locations.size()==0);
@@ -112,14 +89,8 @@ public class PuzzleTest {
 
     @Test
     public void searchHorizontalBackwards(){
-        char [][] data = {
-                { 'A', 'B', 'C', 'D'},
-                { 'E', 'F', 'G', 'H'},
-                { 'I', 'C', 'K', 'L'},
-                { 'M', 'N', 'O', 'C'}
-        };
         Puzzle puzzle = new Puzzle(data);
-        ArrayList<Point> locations =puzzle.searchHorizontalBackwards("LKCI");
+        ArrayList<Point> locations =puzzle.searchHorizontalBackwards("LKJI");
         assert(locations.size()==4);
         assert(locations.contains(new Point(2,3)));
         assert(locations.contains(new Point(2, 2)));
