@@ -42,7 +42,7 @@ public class Point {
 
     //Get the point to the toprigh
     public static Point getTopRight(Point point){
-        return point;
+        return new Point(point.row-1, point.column+1);
     }
 
     @Override
