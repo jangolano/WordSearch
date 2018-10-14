@@ -150,4 +150,14 @@ public class PuzzleTest {
 
     }
 
+    @Test
+    public void searchDiagnalTopLeft(){
+        Puzzle puzzle = new Puzzle(data);
+        ArrayList<Point> locations = puzzle.searchDiagnalTopLeft("KFA");
+        assert(locations.size()==3);
+        assert(locations.contains(new Point(2,2)));
+        assert(locations.contains(new Point(1,1)));
+        assert(locations.contains(new Point(0,0)));
+    }
+
 }

@@ -100,6 +100,9 @@ public class Puzzle {
     ArrayList<Point> searchDiagnalTopRight(String word){
         return findValues(word, Point::getTopRight);
     }
-
+    //Find a character and then search diagnal to the top right
+    ArrayList<Point> searchDiagnalTopLeft(String word){
+        return new ArrayList<>();
+    }
 
 }
