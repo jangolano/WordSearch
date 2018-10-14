@@ -27,7 +27,7 @@ public class Point {
 
     //Get the point to the left
     public Point getLeft(Point point){
-        return point;
+        return new Point(point.row, point.column-1);
     }
 
     @Override
