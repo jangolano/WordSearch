@@ -118,14 +118,14 @@ public class PuzzleTest {
     @Test
     public void searchVerticalFail(){
         Puzzle puzzle = new Puzzle(data);
-        ArrayList<Point> locations = puzzle.searchVertical("KCG");
+        ArrayList<Point> locations = puzzle.searchVertical("KGC");
         assert(locations.size()==0);
     }
 
     @Test
     public void searchVerticalBackwards(){
         Puzzle puzzle = new Puzzle(data);
-        ArrayList<Point> locations = puzzle.searchVertical("KCG");
+        ArrayList<Point> locations = puzzle.searchVerticalBackwards("KGC");
         assert(locations.size()==3);
         assert(locations.contains(new Point(2,2)));
         assert(locations.contains(new Point(1,2)));

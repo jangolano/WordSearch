@@ -62,7 +62,7 @@ public class Puzzle {
 
     //Find a character and then search up
     ArrayList<Point> searchVerticalBackwards(String word){
-        return new ArrayList<Point>();
+        return findValues(word, Point::getAbove);
     }
 
     //Search for values within the puzzle
