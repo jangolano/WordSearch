@@ -45,9 +45,9 @@ public class Point {
         return new Point(point.row-1, point.column+1);
     }
 
-    //Get the point to the topright
+    //Get the point to the topleft
     public static Point getTopLeft(Point point){
-        return point;
+        return new Point(point.row-1, point.column-1);
     }
 
 
