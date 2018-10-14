@@ -65,6 +65,11 @@ public class Puzzle {
         return findValues(word, Point::getAbove);
     }
 
+    //Find a character and then search diagnal to the top right
+    ArrayList<Point> searchDiagnalTopRight(String word){
+        return new ArrayList<>();
+    }
+
     //Search for values within the puzzle
     private ArrayList<Point> findValues(String word, Function<Point, Point > f){
         char [] chars = word.toCharArray();

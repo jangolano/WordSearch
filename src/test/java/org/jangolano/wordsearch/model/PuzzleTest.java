@@ -131,4 +131,14 @@ public class PuzzleTest {
         assert(locations.contains(new Point(1,2)));
         assert(locations.contains(new Point(0,2)));
     }
+
+    @Test
+    public void searchDiagnalTopRight(){
+        Puzzle puzzle = new Puzzle(data);
+        ArrayList<Point> locations = puzzle.searchDiagnalTopRight("NKH");
+        assert(locations.size()==3);
+        assert(locations.contains(new Point(3,1)));
+        assert(locations.contains(new Point(2,2)));
+        assert(locations.contains(new Point(1,3)));
+    }
 }
