@@ -8,7 +8,7 @@ public class Puzzle {
     }
 
     char getValueAt(int row, int column){
-        return 'z';
+       return data[row][column];
     }
 
 }
