@@ -6,6 +6,7 @@ import java.util.ArrayList;
 
 public class PuzzleTest {
 
+    final char NULL_VALUE = '\u0000';
     @Test
     public void getValueAt(){
         char [][] data = {
@@ -18,6 +19,20 @@ public class PuzzleTest {
         Point point = new Point(3,2);
         char value  = puzzle.getValueAt(point);
         assert(value =='O');
+    }
+
+    @Test
+    public void getValueAtOutOfBounds(){
+        char [][] data = {
+                { 'A', 'B', 'C', 'D'},
+                { 'E', 'F', 'G', 'H'},
+                { 'I', 'J', 'K', 'L'},
+                { 'M', 'N', 'O', 'P'}
+        };
+        Puzzle puzzle = new Puzzle(data);
+        Point point = new Point(10,5);
+        char value = puzzle.getValueAt(point);
+        assert(value==NULL_VALUE);
     }
 
     @Test
@@ -35,6 +50,7 @@ public class PuzzleTest {
         assert(value =='A');
     }
 
+
     @Test
     public void getLocationsOf(){
         char [][] data = {
@@ -50,4 +66,5 @@ public class PuzzleTest {
         assert(instances.contains(new Point(2, 1)));
         assert(instances.contains(new Point(3,3)));
     }
+
 }
