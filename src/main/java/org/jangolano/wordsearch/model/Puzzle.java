@@ -52,12 +52,15 @@ public class Puzzle {
         for(Point point:locations){
             ArrayList<Point> results = new ArrayList<Point>();
             results.add(point);
+            Point right = point ;
             for(int index = 1; index<chars.length; index++){
-                Point right = new Point(point.row ,point.column+index);
+                right = point.getRight(right);
                 if(getValueAt(right)==chars[index]){
                     results.add(right);
                 }
             }
+
+            //If all the letters are found return
             if(results.size()==chars.length){
                 return results;
             }
@@ -66,7 +69,7 @@ public class Puzzle {
     }
 
 
-    //Method to get the all the locationals of the first character of a string.
+    //Method to get the all the locations of the first character of a string.
     private ArrayList<Point> getInitalLocations(char aChar) {
         char character = aChar; //Get the first character in the word and find its locations;
         return getLocationsOf(character);

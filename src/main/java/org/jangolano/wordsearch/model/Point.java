@@ -40,6 +40,7 @@ public class Point {
         return new Point(point.row+1, point.column);
     }
 
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
