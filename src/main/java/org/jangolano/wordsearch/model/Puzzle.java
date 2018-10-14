@@ -10,8 +10,9 @@ public class Puzzle {
     char getValueAt(int row, int column){
        return data[row][column];
     }
-    void setValueAt(int row, int column, char value){
 
+    void setValueAt(int row, int column, char value){
+        data[row][column] = value;
     }
 
 }
