@@ -42,6 +42,11 @@ public class PointTest {
         assert(point.column+1==topRight.column);
     }
 
-
+    @Test
+    public void testGetTopLeft(){
+        Point topLeft = point.getTopLeft(point);
+        assert(point.row-1==topLeft.row);
+        assert(point.column-1==topLeft.column);
+    }
 
 }

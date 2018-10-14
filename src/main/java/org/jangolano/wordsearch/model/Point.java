@@ -45,6 +45,12 @@ public class Point {
         return new Point(point.row-1, point.column+1);
     }
 
+    //Get the point to the topright
+    public static Point getTopLeft(Point point){
+        return point;
+    }
+
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
