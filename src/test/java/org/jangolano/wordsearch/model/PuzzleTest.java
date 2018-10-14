@@ -97,4 +97,17 @@ public class PuzzleTest {
         assert(locations.contains(new Point(1,3)));
     }
 
+    @Test
+    public void searchHorizontalFail(){
+        char [][] data = {
+                { 'A', 'B', 'C', 'D'},
+                { 'E', 'F', 'G', 'H'},
+                { 'I', 'C', 'K', 'L'},
+                { 'M', 'N', 'O', 'C'}
+        };
+        Puzzle puzzle = new Puzzle(data);
+        ArrayList<Point> locations =puzzle.searchHorizontal("FGHI");
+        assert(locations.size()==0);
+    }
+
 }
