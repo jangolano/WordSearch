@@ -23,6 +23,6 @@ public class PointTest {
     public void testGetAbove(){
         Point point = new Point(1,2);
         Point above  = point.getAbove(point);
-        assert(point.getRow()==above.getRow()-1);
+        assert(point.getRow()-1==above.getRow());
     }
 }

@@ -32,7 +32,7 @@ public class Point {
 
     //Get the point above
     public Point getAbove(Point point){
-        return point;
+        return new Point(point.row-1, point.column);
     }
 
     @Override
