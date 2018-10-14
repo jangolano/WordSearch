@@ -40,7 +40,7 @@ public class Point {
         return new Point(point.row+1, point.column);
     }
 
-    //Get the point to the toprigh
+    //Get the point to the topright
     public static Point getTopRight(Point point){
         return new Point(point.row-1, point.column+1);
     }
