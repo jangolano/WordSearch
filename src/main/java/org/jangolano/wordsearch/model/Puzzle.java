@@ -70,6 +70,25 @@ public class Puzzle {
 
 
     ArrayList<Point> searchHorizontalBackwards(String word){
+        char [] chars = word.toCharArray();
+        ArrayList<Point> locations = getInitalLocations(chars[0]);
+
+        for(Point point:locations){
+            ArrayList<Point> results = new ArrayList<Point>();
+            results.add(point);
+            Point left = point ;
+            for(int index = 1; index<chars.length; index++){
+                left = point.getLeft(left);
+                if(getValueAt(left)==chars[index]){
+                    results.add(left);
+                }
+            }
+
+            //If all the letters are found return
+            if(results.size()==chars.length){
+                return results;
+            }
+        }
         return new ArrayList<Point>();
     }
 

@@ -119,8 +119,8 @@ public class PuzzleTest {
                 { 'M', 'N', 'O', 'C'}
         };
         Puzzle puzzle = new Puzzle(data);
-        ArrayList<Point> locations =puzzle.searchHorizontal("ILKC");
-        assert(locations.size()==3);
+        ArrayList<Point> locations =puzzle.searchHorizontalBackwards("LKCI");
+        assert(locations.size()==4);
         assert(locations.contains(new Point(2,3)));
         assert(locations.contains(new Point(2, 2)));
         assert(locations.contains(new Point(2,1)));
