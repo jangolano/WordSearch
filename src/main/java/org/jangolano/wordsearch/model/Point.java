@@ -19,6 +19,10 @@ public class Point {
         return column;
     }
 
+    public Point getRight(Point point){
+        return point;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
