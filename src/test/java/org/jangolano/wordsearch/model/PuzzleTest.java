@@ -121,4 +121,14 @@ public class PuzzleTest {
         ArrayList<Point> locations = puzzle.searchVertical("KCG");
         assert(locations.size()==0);
     }
+
+    @Test
+    public void searchVerticalBackwards(){
+        Puzzle puzzle = new Puzzle(data);
+        ArrayList<Point> locations = puzzle.searchVertical("KCG");
+        assert(locations.size()==3);
+        assert(locations.contains(new Point(2,2)));
+        assert(locations.contains(new Point(1,2)));
+        assert(locations.contains(new Point(0,2)));
+    }
 }
