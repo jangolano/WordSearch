@@ -110,4 +110,21 @@ public class PuzzleTest {
         assert(locations.size()==0);
     }
 
+    @Test
+    public void searchHorizontalBackwards(){
+        char [][] data = {
+                { 'A', 'B', 'C', 'D'},
+                { 'E', 'F', 'G', 'H'},
+                { 'I', 'C', 'K', 'L'},
+                { 'M', 'N', 'O', 'C'}
+        };
+        Puzzle puzzle = new Puzzle(data);
+        ArrayList<Point> locations =puzzle.searchHorizontal("ILKC");
+        assert(locations.size()==3);
+        assert(locations.contains(new Point(2,3)));
+        assert(locations.contains(new Point(2, 2)));
+        assert(locations.contains(new Point(2,1)));
+        assert(locations.contains(new Point(2,0)));
+    }
+
 }

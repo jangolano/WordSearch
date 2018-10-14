@@ -69,6 +69,10 @@ public class Puzzle {
     }
 
 
+    ArrayList<Point> searchHorizontalBackwards(String word){
+        return new ArrayList<Point>();
+    }
+
     //Method to get the all the locations of the first character of a string.
     private ArrayList<Point> getInitalLocations(char aChar) {
         char character = aChar; //Get the first character in the word and find its locations;
