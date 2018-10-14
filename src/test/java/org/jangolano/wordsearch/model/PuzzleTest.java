@@ -3,8 +3,6 @@ package org.jangolano.wordsearch.model;
 import org.junit.Test;
 
 import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.Set;
 
 public class PuzzleTest {
 
@@ -17,7 +15,8 @@ public class PuzzleTest {
             { 'M', 'N', 'O', 'P'}
         };
         Puzzle puzzle = new Puzzle(data);
-        char value  = puzzle.getValueAt(3, 2);
+        Point point = new Point(3,2);
+        char value  = puzzle.getValueAt(point);
         assert(value =='O');
     }
 
@@ -30,13 +29,14 @@ public class PuzzleTest {
                 { 'M', 'N', 'O', 'P'}
         };
         Puzzle puzzle = new Puzzle(data);
-        puzzle.setValueAt(3, 2, 'A');
-        char value = puzzle.getValueAt(3,2);
+        Point point = new Point(3,2);
+        puzzle.setValueAt(point, 'A');
+        char value = puzzle.getValueAt(point);
         assert(value =='A');
     }
 
     @Test
-    public void getInstancesOf(){
+    public void getLocationsOf(){
         char [][] data = {
                 { 'A', 'B', 'C', 'D'},
                 { 'E', 'F', 'G', 'H'},
@@ -44,11 +44,10 @@ public class PuzzleTest {
                 { 'M', 'N', 'O', 'C'}
         };
         Puzzle puzzle = new Puzzle(data);
-        ArrayList<Point> instances = puzzle.getInstancesOf('C');
+        ArrayList<Point> instances = puzzle.getLocationsOf('C');
         assert(instances.size()==3);
         assert(instances.contains(new Point(0,2)));
         assert(instances.contains(new Point(2, 1)));
         assert(instances.contains(new Point(3,3)));
-
     }
 }

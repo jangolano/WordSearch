@@ -10,17 +10,17 @@ public class Puzzle {
     }
 
     //Method get the character at location in the array
-    char getValueAt(int row, int column){
-       return data[row][column];
+    char getValueAt(Point point){
+       return data[point.getRow()][point.getColumn()];
     }
 
     //Method to set the value at a location in the array.
-    void setValueAt(int row, int column, char value){
-        data[row][column] = value;
+    void setValueAt(Point point, char value){
+        data[point.getRow()][point.getColumn()] = value;
     }
 
     //Method to get locations of a value in the array.
-    ArrayList<Point> getInstancesOf(char value){
+    ArrayList<Point> getLocationsOf(char value){
         ArrayList<Point> instances = new ArrayList<Point>();
         for (int row = 0; row<data.length; row++){
 
