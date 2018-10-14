@@ -67,7 +67,7 @@ public class Puzzle {
 
     //Find a character and then search diagnal to the top right
     ArrayList<Point> searchDiagnalTopRight(String word){
-        return new ArrayList<>();
+        return findValues(word, Point::getTopRight);
     }
 
     //Search for values within the puzzle
