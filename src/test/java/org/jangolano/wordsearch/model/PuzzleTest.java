@@ -81,4 +81,20 @@ public class PuzzleTest {
         assert(instances.contains(new Point(3,3)));
     }
 
+    @Test
+    public void searchHorizontal(){
+        char [][] data = {
+                { 'A', 'B', 'C', 'D'},
+                { 'E', 'F', 'G', 'H'},
+                { 'I', 'C', 'K', 'L'},
+                { 'M', 'N', 'O', 'C'}
+        };
+        Puzzle puzzle = new Puzzle(data);
+        ArrayList<Point> locations =puzzle.searchHorizontal("FGH");
+        assert(locations.size()==3);
+        assert(locations.contains(new Point(1,1)));
+        assert(locations.contains(new Point(1, 2)));
+        assert(locations.contains(new Point(1,3)));
+    }
+
 }

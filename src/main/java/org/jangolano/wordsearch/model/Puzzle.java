@@ -44,4 +44,10 @@ public class Puzzle {
         return instances;
     }
 
+    //Find a character and then search to the right for the rest of the values with the word.
+    ArrayList<Point> searchHorizontal(String word){
+        return new ArrayList<Point>();
+    }
+
+
 }
