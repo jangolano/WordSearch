@@ -20,23 +20,23 @@ public class Point {
     }
 
     //Get the point to the right
-    public Point getRight(Point point){
+    public static Point getRight(Point point){
         return new Point(point.row, point.column+1);
     }
 
 
     //Get the point to the left
-    public Point getLeft(Point point){
+    public static Point getLeft(Point point){
         return new Point(point.row, point.column-1);
     }
 
     //Get the point above
-    public Point getAbove(Point point){
+    public static Point getAbove(Point point){
         return new Point(point.row-1, point.column);
     }
 
     //Get the point below
-    public Point getBelow(Point point){
+    public static Point getBelow(Point point){
         return new Point(point.row+1, point.column);
     }
 

@@ -1,6 +1,7 @@
 package org.jangolano.wordsearch.model;
 
 import java.util.ArrayList;
+import java.util.function.Function;
 
 public class Puzzle {
 
@@ -46,41 +47,28 @@ public class Puzzle {
 
     //Find a character and then search to the right for the rest of the values with the word.
     ArrayList<Point> searchHorizontal(String word){
-        char [] chars = word.toCharArray();
-        ArrayList<Point> locations = getInitalLocations(chars[0]);
-
-        for(Point point:locations){
-            ArrayList<Point> results = new ArrayList<Point>();
-            results.add(point);
-            Point right = point ;
-            for(int index = 1; index<chars.length; index++){
-                right = point.getRight(right);
-                if(getValueAt(right)==chars[index]){
-                    results.add(right);
-                }
-            }
-
-            //If all the letters are found return
-            if(results.size()==chars.length){
-                return results;
-            }
-        }
-        return new ArrayList<Point>();
+        return findValues(word, Point::getRight);
     }
 
-
+    //Find a character and then search to the right for the rest of the values with the word.
     ArrayList<Point> searchHorizontalBackwards(String word){
+        return findValues(word, Point::getLeft);
+    }
+
+
+    //Search for values within the puzzle
+    private ArrayList<Point> findValues(String word, Function<Point, Point > f){
         char [] chars = word.toCharArray();
         ArrayList<Point> locations = getInitalLocations(chars[0]);
 
         for(Point point:locations){
             ArrayList<Point> results = new ArrayList<Point>();
             results.add(point);
-            Point left = point ;
+            Point nextPoint = point ;
             for(int index = 1; index<chars.length; index++){
-                left = point.getLeft(left);
-                if(getValueAt(left)==chars[index]){
-                    results.add(left);
+                nextPoint = f.apply(nextPoint);
+                if(getValueAt(nextPoint)==chars[index]){
+                    results.add(nextPoint);
                 }
             }
 
@@ -91,12 +79,12 @@ public class Puzzle {
         }
         return new ArrayList<Point>();
     }
+
 
     //Method to get the all the locations of the first character of a string.
     private ArrayList<Point> getInitalLocations(char aChar) {
         char character = aChar; //Get the first character in the word and find its locations;
         return getLocationsOf(character);
     }
-
 
 }
