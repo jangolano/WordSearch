@@ -30,6 +30,11 @@ public class Point {
         return new Point(point.row, point.column-1);
     }
 
+    //Get the point above
+    public Point getAbove(Point point){
+        return point;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

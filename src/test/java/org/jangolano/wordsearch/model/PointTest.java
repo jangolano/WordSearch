@@ -18,4 +18,11 @@ public class PointTest {
         Point left  = point.getLeft(point);
         assert(point.getColumn()-1==left.getColumn());
     }
+
+    @Test
+    public void testGetAbove(){
+        Point point = new Point(1,2);
+        Point above  = point.getAbove(point);
+        assert(point.getRow()==above.getRow()-1);
+    }
 }
