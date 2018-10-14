@@ -98,4 +98,10 @@ public class PuzzleTest {
         assert(locations.contains(new Point(2,0)));
     }
 
+    @Test
+    public void searchHorizontalBackwardsFail(){
+        Puzzle puzzle = new Puzzle(data);
+        ArrayList<Point> locations =puzzle.searchHorizontalBackwards("FGHI");
+        assert(locations.size()==0);
+    }
 }
