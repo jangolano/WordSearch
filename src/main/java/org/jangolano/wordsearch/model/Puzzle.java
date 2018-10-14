@@ -5,13 +5,19 @@ import java.util.ArrayList;
 public class Puzzle {
 
     char [][] data;
+    final char NULL_VALUE = '\u0000';
+
     Puzzle(char [][] data){
         this.data = data;
     }
 
     //Method get the character at location in the array
     char getValueAt(Point point){
-       return data[point.getRow()][point.getColumn()];
+        try {
+            return data[point.getRow()][point.getColumn()];
+        }catch(IndexOutOfBoundsException e){
+            return NULL_VALUE;
+        }
     }
 
     //Method to set the value at a location in the array.
