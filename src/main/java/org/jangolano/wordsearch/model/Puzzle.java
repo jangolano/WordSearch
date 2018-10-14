@@ -22,7 +22,11 @@ public class Puzzle {
 
     //Method to set the value at a location in the array.
     void setValueAt(Point point, char value){
-        data[point.getRow()][point.getColumn()] = value;
+        try {
+            data[point.getRow()][point.getColumn()] = value;
+        }catch(IndexOutOfBoundsException e){
+
+        }
     }
 
     //Method to get locations of a value in the array.
