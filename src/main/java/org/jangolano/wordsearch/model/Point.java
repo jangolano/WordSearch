@@ -37,7 +37,7 @@ public class Point {
 
     //Get the point below
     public Point getBelow(Point point){
-        return point;
+        return new Point(point.row+1, point.column);
     }
 
     @Override
