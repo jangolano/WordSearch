@@ -81,7 +81,7 @@ public class PuzzleTest {
     }
 
     @Test
-    public void searchHorizontalFail(){
+    public void searchHorizontalNotFound(){
         Puzzle puzzle = new Puzzle(data);
         ArrayList<Point> locations =puzzle.searchHorizontal("FGHI");
         assert(locations.size()==0);
@@ -99,7 +99,7 @@ public class PuzzleTest {
     }
 
     @Test
-    public void searchHorizontalBackwardsFail(){
+    public void searchHorizontalBackwardsNotFound(){
         Puzzle puzzle = new Puzzle(data);
         ArrayList<Point> locations =puzzle.searchHorizontalBackwards("FGHI");
         assert(locations.size()==0);
@@ -116,7 +116,7 @@ public class PuzzleTest {
     }
 
     @Test
-    public void searchVerticalFail(){
+    public void searchVerticalNotFound(){
         Puzzle puzzle = new Puzzle(data);
         ArrayList<Point> locations = puzzle.searchVertical("KGC");
         assert(locations.size()==0);
@@ -143,7 +143,7 @@ public class PuzzleTest {
     }
 
     @Test
-    public void searchDiagnolTopRightNotFound(){
+    public void searchDiagnalTopRightNotFound(){
         Puzzle puzzle = new Puzzle(data);
         ArrayList<Point> locations = puzzle.searchDiagnalTopRight("HKN");
         assert(locations.size()==0);
