@@ -35,6 +35,11 @@ public class Point {
         return new Point(point.row-1, point.column);
     }
 
+    //Get the point below
+    public Point getBelow(Point point){
+        return point;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

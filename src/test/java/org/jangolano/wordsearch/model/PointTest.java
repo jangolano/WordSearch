@@ -25,4 +25,13 @@ public class PointTest {
         Point above  = point.getAbove(point);
         assert(point.getRow()-1==above.getRow());
     }
+
+    @Test
+    public void testGetBelow(){
+        Point point = new Point(1,2);
+        Point below  = point.getBelow(point);
+        assert(point.getRow()+1==below.getRow());
+    }
+
+
 }
