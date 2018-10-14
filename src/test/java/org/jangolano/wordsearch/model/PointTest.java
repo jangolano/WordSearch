@@ -1,9 +1,9 @@
 package org.jangolano.wordsearch.model;
 
-
 import org.junit.Test;
 
 public class PointTest {
+
 
     @Test
     public void testGetRight(){
@@ -33,5 +33,13 @@ public class PointTest {
         assert(point.getRow()+1==below.getRow());
     }
 
+    @Test
+    public void testGetTopRight(){
+        Point point = new Point(1, 2);
+        Point topRight = point.getTopRight(point);
+        assert(point.row-1==topRight.row);
+        assert(point.column+1==topRight.column);
+
+    }
 
 }

@@ -40,6 +40,10 @@ public class Point {
         return new Point(point.row+1, point.column);
     }
 
+    //Get the point to the toprigh
+    public static Point getTopRight(Point point){
+        return point;
+    }
 
     @Override
     public boolean equals(Object o) {
