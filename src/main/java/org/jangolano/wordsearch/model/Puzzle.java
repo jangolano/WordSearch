@@ -47,8 +47,7 @@ public class Puzzle {
     //Find a character and then search to the right for the rest of the values with the word.
     ArrayList<Point> searchHorizontal(String word){
         char [] chars = word.toCharArray();
-        char character = chars[0]; //Get the first character in the word and find its locations;
-        ArrayList<Point>locations = getLocationsOf(character);
+        ArrayList<Point> locations = getInitalLocations(chars[0]);
 
         for(Point point:locations){
             ArrayList<Point> results = new ArrayList<Point>();
@@ -65,5 +64,13 @@ public class Puzzle {
         }
         return new ArrayList<Point>();
     }
+
+
+    //Method to get the all the locationals of the first character of a string.
+    private ArrayList<Point> getInitalLocations(char aChar) {
+        char character = aChar; //Get the first character in the word and find its locations;
+        return getLocationsOf(character);
+    }
+
 
 }
