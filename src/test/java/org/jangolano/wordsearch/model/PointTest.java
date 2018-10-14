@@ -11,4 +11,11 @@ public class PointTest {
         Point right  = point.getRight(point);
         assert(point.getColumn()+1==right.getColumn());
     }
+
+    @Test
+    public void testGetLeft(){
+        Point point = new Point(1,2);
+        Point left  = point.getLeft(point);
+        assert(point.getColumn()-1==left.getColumn());
+    }
 }

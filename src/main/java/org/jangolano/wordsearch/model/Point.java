@@ -25,6 +25,11 @@ public class Point {
     }
 
 
+    //Get the point to the left
+    public Point getLeft(Point point){
+        return point;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
