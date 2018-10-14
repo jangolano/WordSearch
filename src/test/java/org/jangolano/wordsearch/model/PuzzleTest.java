@@ -50,6 +50,20 @@ public class PuzzleTest {
         assert(value =='A');
     }
 
+    @Test
+    public void setValueAtOutOfBounds(){
+        char [][] data = {
+                { 'A', 'B', 'C', 'D'},
+                { 'E', 'F', 'G', 'H'},
+                { 'I', 'J', 'K', 'L'},
+                { 'M', 'N', 'O', 'P'}
+        };
+        Puzzle puzzle = new Puzzle(data);
+        Point point = new Point(10,13);
+        puzzle.setValueAt(point, 'A');
+        char value = puzzle.getValueAt(point);
+        assert(value ==NULL_VALUE);
+    }
 
     @Test
     public void getLocationsOf(){
