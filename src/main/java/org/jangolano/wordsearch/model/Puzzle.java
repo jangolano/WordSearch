@@ -46,8 +46,24 @@ public class Puzzle {
 
     //Find a character and then search to the right for the rest of the values with the word.
     ArrayList<Point> searchHorizontal(String word){
+        char [] chars = word.toCharArray();
+        char character = chars[0]; //Get the first character in the word and find its locations;
+        ArrayList<Point>locations = getLocationsOf(character);
+
+        for(Point point:locations){
+            ArrayList<Point> results = new ArrayList<Point>();
+            results.add(point);
+            for(int index = 1; index<chars.length; index++){
+                Point right = new Point(point.row ,point.column+index);
+                if(getValueAt(right)==chars[index]){
+                    results.add(right);
+                }
+            }
+            if(results.size()==chars.length){
+                return results;
+            }
+        }
         return new ArrayList<Point>();
     }
-
 
 }
