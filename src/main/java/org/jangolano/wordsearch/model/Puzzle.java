@@ -21,7 +21,17 @@ public class Puzzle {
 
     //Method to get locations of a value in the array.
     ArrayList<Point> getInstancesOf(char value){
-        return new ArrayList<Point>();
+        ArrayList<Point> instances = new ArrayList<Point>();
+        for (int row = 0; row<data.length; row++){
+
+            for(int col = 0; col<data[row].length ;col++){
+                   if(data[row][col]==value){
+                       Point point = new Point(row, col);
+                       instances.add(point);
+                   }
+            }
+        }
+        return instances;
     }
 
 }
