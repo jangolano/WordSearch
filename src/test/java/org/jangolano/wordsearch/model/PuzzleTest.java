@@ -160,4 +160,13 @@ public class PuzzleTest {
         assert(locations.contains(new Point(0,0)));
     }
 
+
+    @Test
+    public void searchDiagnalTopLeftNotFound(){
+        Puzzle puzzle = new Puzzle(data);
+        ArrayList<Point> locations = puzzle.searchDiagnalTopLeft("AFK");
+        assert(locations.size()==0);
+
+    }
+
 }
