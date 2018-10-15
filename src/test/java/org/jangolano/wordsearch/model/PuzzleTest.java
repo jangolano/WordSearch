@@ -208,4 +208,10 @@ public class PuzzleTest {
         assert(locations.size()==1);
     }
 
+    @Test //Vertical Backwards
+    public void searchPuzzleForWordsNJFB(){
+        ArrayList<Point> locations = puzzle.searchPuzzle("NJFB");
+        assert(locations.size()==4);
+    }
+
 }
