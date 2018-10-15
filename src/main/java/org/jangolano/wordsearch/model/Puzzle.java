@@ -108,6 +108,6 @@ public class Puzzle {
 
     //Find a character and then search diagnal to the bottom right
     ArrayList<Point> searchDiagnalBottomRight(String word){
-        return new ArrayList<>();
+        return findValues(word, Point::getBottomRight);
     }
 }
