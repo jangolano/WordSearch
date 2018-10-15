@@ -113,6 +113,6 @@ public class Puzzle {
 
     //Find a character and then search diangol to the bottom left
     ArrayList<Point> searchDiagnalBottomLeft(String word){
-        return new ArrayList<>();
+        return findValues(word, Point::getBottomLeft);
     }
 }
