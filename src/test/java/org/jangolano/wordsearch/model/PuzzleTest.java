@@ -180,7 +180,12 @@ public class PuzzleTest {
         assert(locations.contains(new Point(1,2)));
         assert(locations.contains(new Point(2,1)));
         assert(locations.contains(new Point(3,0)));
-
     }
 
+
+    @Test
+    public void searchDiangalBottomLeftNotFound(){
+        ArrayList<Point> locations = puzzle.searchDiagnalBottomLeft("MJG");
+        assert(locations.size()==0);
+    }
 }
