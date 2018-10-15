@@ -1,3 +1,8 @@
+/**
+ * This class represents a point (x, y) on the puzzle.
+ * This class can also calulate the (x,y) of a point to the left, right
+ * above, below, top right, bottom right, top left and bottom left of a point.
+ */
 package org.jangolano.wordsearch.model;
 
 import java.util.Objects;

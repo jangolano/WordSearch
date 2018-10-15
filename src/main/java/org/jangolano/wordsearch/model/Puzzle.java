@@ -1,3 +1,7 @@
+/**
+ * This class creates a puzzle object, which can search for a return the points
+ * of a matched word.
+ */
 package org.jangolano.wordsearch.model;
 
 import java.util.ArrayList;
