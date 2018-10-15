@@ -55,6 +55,12 @@ public class Point {
         return new Point(point.row+1, point.column+1);
     }
 
+
+    //Get the point to the bottomLeft
+    public static Point getBottomrLeft(Point point){
+        return  point;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
