@@ -140,6 +140,10 @@ public class Puzzle {
         if(result.size()>0){
             return result;
         }
+        result = searchDiagnalBottomRight(word);
+        if(result.size()>0){
+            return result;
+        }
         return result;
     }
 }
