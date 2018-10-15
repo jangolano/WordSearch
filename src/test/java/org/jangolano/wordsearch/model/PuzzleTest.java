@@ -219,4 +219,10 @@ public class PuzzleTest {
         ArrayList<Point> locations = puzzle.searchPuzzle("PON");
         assert(locations.size()==3);
     }
+
+    @Test //Top Right to Bottom Left
+    public void searchPuzzleForWordsJM(){
+        ArrayList<Point> locations = puzzle.searchPuzzle("JM");
+        assert(locations.size()==2);
+    }
 }
