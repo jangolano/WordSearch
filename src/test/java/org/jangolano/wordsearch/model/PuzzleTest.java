@@ -7,8 +7,11 @@ import java.util.ArrayList;
 
 public class PuzzleTest {
 
-    final char NULL_VALUE = '\u0000';
-    char data [][];
+    final char NULL_VALUE = '\u0000';  //The default null value for a character.
+
+    char data [][];  //2D Array used to hold test data.
+
+    Puzzle puzzle;  //Instance of the puzzle object that can be used within the tests.
 
     @Before
     public void setData(){
@@ -18,11 +21,11 @@ public class PuzzleTest {
                 { 'I', 'J', 'K', 'L'},
                 { 'M', 'N', 'O', 'P'}
         };
+        puzzle = new Puzzle(data);
     }
 
     @Test
     public void getValueAt(){
-        Puzzle puzzle = new Puzzle(data);
         Point point = new Point(3,2);
         char value  = puzzle.getValueAt(point);
         assert(value =='O');
@@ -30,7 +33,6 @@ public class PuzzleTest {
 
     @Test
     public void getValueAtOutOfBounds(){
-        Puzzle puzzle = new Puzzle(data);
         Point point = new Point(10,5);
         char value = puzzle.getValueAt(point);
         assert(value==NULL_VALUE);
@@ -38,7 +40,6 @@ public class PuzzleTest {
 
     @Test
     public void setValueAt(){
-        Puzzle puzzle = new Puzzle(data);
         Point point = new Point(3,2);
         puzzle.setValueAt(point, 'A');
         char value = puzzle.getValueAt(point);
@@ -47,7 +48,6 @@ public class PuzzleTest {
 
     @Test
     public void setValueAtOutOfBounds(){
-        Puzzle puzzle = new Puzzle(data);
         Point point = new Point(10,13);
         puzzle.setValueAt(point, 'A');
         char value = puzzle.getValueAt(point);
@@ -72,7 +72,6 @@ public class PuzzleTest {
 
     @Test
     public void searchHorizontal(){
-        Puzzle puzzle = new Puzzle(data);
         ArrayList<Point> locations =puzzle.searchHorizontal("FGH");
         assert(locations.size()==3);
         assert(locations.contains(new Point(1,1)));
@@ -82,14 +81,12 @@ public class PuzzleTest {
 
     @Test
     public void searchHorizontalNotFound(){
-        Puzzle puzzle = new Puzzle(data);
         ArrayList<Point> locations =puzzle.searchHorizontal("FGHI");
         assert(locations.size()==0);
     }
 
     @Test
     public void searchHorizontalBackwards(){
-        Puzzle puzzle = new Puzzle(data);
         ArrayList<Point> locations =puzzle.searchHorizontalBackwards("LKJI");
         assert(locations.size()==4);
         assert(locations.contains(new Point(2,3)));
@@ -100,14 +97,12 @@ public class PuzzleTest {
 
     @Test
     public void searchHorizontalBackwardsNotFound(){
-        Puzzle puzzle = new Puzzle(data);
         ArrayList<Point> locations =puzzle.searchHorizontalBackwards("FGHI");
         assert(locations.size()==0);
     }
 
     @Test
     public void searchVertical(){
-        Puzzle puzzle = new Puzzle(data);
         ArrayList<Point> locations = puzzle.searchVertical("CGK");
         assert(locations.size()==3);
         assert(locations.contains(new Point(0,2)));
@@ -117,14 +112,12 @@ public class PuzzleTest {
 
     @Test
     public void searchVerticalNotFound(){
-        Puzzle puzzle = new Puzzle(data);
         ArrayList<Point> locations = puzzle.searchVertical("KGC");
         assert(locations.size()==0);
     }
 
     @Test
     public void searchVerticalBackwards(){
-        Puzzle puzzle = new Puzzle(data);
         ArrayList<Point> locations = puzzle.searchVerticalBackwards("KGC");
         assert(locations.size()==3);
         assert(locations.contains(new Point(2,2)));
@@ -134,7 +127,6 @@ public class PuzzleTest {
 
     @Test
     public void searchDiagnalTopRight(){
-        Puzzle puzzle = new Puzzle(data);
         ArrayList<Point> locations = puzzle.searchDiagnalTopRight("NKH");
         assert(locations.size()==3);
         assert(locations.contains(new Point(3,1)));
@@ -144,15 +136,12 @@ public class PuzzleTest {
 
     @Test
     public void searchDiagnalTopRightNotFound(){
-        Puzzle puzzle = new Puzzle(data);
         ArrayList<Point> locations = puzzle.searchDiagnalTopRight("HKN");
         assert(locations.size()==0);
-
     }
 
     @Test
     public void searchDiagnalTopLeft(){
-        Puzzle puzzle = new Puzzle(data);
         ArrayList<Point> locations = puzzle.searchDiagnalTopLeft("KFA");
         assert(locations.size()==3);
         assert(locations.contains(new Point(2,2)));
@@ -163,10 +152,8 @@ public class PuzzleTest {
 
     @Test
     public void searchDiagnalTopLeftNotFound(){
-        Puzzle puzzle = new Puzzle(data);
         ArrayList<Point> locations = puzzle.searchDiagnalTopLeft("AFK");
         assert(locations.size()==0);
-
     }
 
 }
