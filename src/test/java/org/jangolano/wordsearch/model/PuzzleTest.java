@@ -173,4 +173,14 @@ public class PuzzleTest {
         assert(locations.size()==0);
     }
 
+    @Test
+    public void searchDiangalBottomLeft(){
+        ArrayList<Point> locations = puzzle.searchDiagnalBottomLeft("GJM");
+        assert(locations.size()==3);
+        assert(locations.contains(new Point(1,2)));
+        assert(locations.contains(new Point(2,1)));
+        assert(locations.contains(new Point(3,0)));
+
+    }
+
 }
