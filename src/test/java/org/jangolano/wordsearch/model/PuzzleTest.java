@@ -244,5 +244,10 @@ public class PuzzleTest {
         assert(locations.size()==4);
     }
 
+    @Test //Look for value that that isn't in the puzzle
+    public void searchPuzzleForWordsInvalid(){
+        ArrayList<Point> locations = puzzle.searchPuzzle("INVALID");
+        assert(locations.size()==0);
+    }
 
 }
