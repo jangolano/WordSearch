@@ -51,6 +51,7 @@ public class Puzzle {
         return getLocationsOf(aChar);
     }
 
+
     //Search for values within the puzzle
     private ArrayList<Point> findValues(String word, Function<Point, Point > f){
         char [] chars = word.toCharArray();
@@ -114,5 +115,11 @@ public class Puzzle {
     //Find a character and then search diangol to the bottom left
     ArrayList<Point> searchDiagnalBottomLeft(String word){
         return findValues(word, Point::getBottomLeft);
+    }
+
+    //Search the whole puzzle for a word
+    ArrayList<Point> searchPuzzle(String word){
+        ArrayList<Point> result = new ArrayList<>();
+        return result;
     }
 }

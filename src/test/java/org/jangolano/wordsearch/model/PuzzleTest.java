@@ -188,4 +188,13 @@ public class PuzzleTest {
         ArrayList<Point> locations = puzzle.searchDiagnalBottomLeft("MJG");
         assert(locations.size()==0);
     }
+
+
+    @Test
+    public void searchPuzzleForWordsDHL(){
+        ArrayList<Point> locations = puzzle.searchPuzzle("DHL");
+        assert(locations.size()==3);
+
+    }
+
 }
