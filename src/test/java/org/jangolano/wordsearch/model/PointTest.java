@@ -58,7 +58,7 @@ public class PointTest {
 
     @Test
     public void testGetBottomLeft(){
-        Point bottomLeft = point.getBottomrLeft(point);
+        Point bottomLeft = point.getBottomLeft(point);
         assert(point.row+1==bottomLeft.row);
         assert(point.column-1==bottomLeft.column);
     }

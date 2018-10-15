@@ -57,8 +57,8 @@ public class Point {
 
 
     //Get the point to the bottomLeft
-    public static Point getBottomrLeft(Point point){
-        return  point;
+    public static Point getBottomLeft(Point point){
+        return new Point(point.row+1, point.column-1);
     }
 
     @Override
