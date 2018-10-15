@@ -190,16 +190,18 @@ public class PuzzleTest {
     }
 
 
-    @Test
+    @Test //Vertical
     public void searchPuzzleForWordsDHL(){
         ArrayList<Point> locations = puzzle.searchPuzzle("DHL");
         assert(locations.size()==3);
     }
 
-    @Test
+    @Test //Horizontal
     public void searchPuzzleForWordsNO(){
         ArrayList<Point> locations = puzzle.searchPuzzle("NO");
         assert(locations.size()==2);
     }
+
+
 
 }

@@ -124,6 +124,10 @@ public class Puzzle {
         if(result.size()>0){
             return result;
         }
+        result = searchHorizontal(word);
+        if(result.size()>0){
+            return result;
+        }
 
         return result;
     }
