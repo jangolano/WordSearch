@@ -119,7 +119,12 @@ public class Puzzle {
 
     //Search the whole puzzle for a word
     ArrayList<Point> searchPuzzle(String word){
-        ArrayList<Point> result = new ArrayList<>();
+        ArrayList<Point> result;
+        result = searchVertical(word);
+        if(result.size()>0){
+            return result;
+        }
+
         return result;
     }
 }
