@@ -239,7 +239,7 @@ public class PuzzleTest {
     }
 
     @Test //Bottom Right to Top Left
-    public void searchPuzzleForWords(){
+    public void searchPuzzleForWordsPKFA(){
         ArrayList<Point> locations = puzzle.searchPuzzle("PKFA");
         assert(locations.size()==4);
     }
