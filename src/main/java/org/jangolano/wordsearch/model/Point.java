@@ -52,7 +52,7 @@ public class Point {
 
     //Get the point to the bottomRight
     public static Point getBottomRight(Point point){
-        return point;
+        return new Point(point.row+1, point.column+1);
     }
 
     @Override
