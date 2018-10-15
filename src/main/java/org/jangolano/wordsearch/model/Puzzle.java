@@ -132,6 +132,10 @@ public class Puzzle {
         if(result.size()>0){
             return result;
         }
+        result = searchHorizontalBackwards(word);
+        if(result.size()>0){
+            return result;
+        }
 
         return result;
     }
