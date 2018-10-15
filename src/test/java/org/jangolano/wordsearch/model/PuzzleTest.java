@@ -202,6 +202,10 @@ public class PuzzleTest {
         assert(locations.size()==2);
     }
 
-
+    @Test //Single Letter
+    public void searchPuzzleSingleLetter(){
+        ArrayList<Point> locations = puzzle.searchPuzzle("A");
+        assert(locations.size()==1);
+    }
 
 }
