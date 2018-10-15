@@ -214,4 +214,9 @@ public class PuzzleTest {
         assert(locations.size()==4);
     }
 
+    @Test //Horizontal Backwards
+    public void searchPuzzleForWordsPON(){
+        ArrayList<Point> locations = puzzle.searchPuzzle("PON");
+        assert(locations.size()==43);
+    }
 }
