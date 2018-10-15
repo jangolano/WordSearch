@@ -156,6 +156,7 @@ public class PuzzleTest {
         assert(locations.size()==0);
     }
 
+
     @Test
     public void searchDiagnalBottomRight(){
         ArrayList<Point> locations = puzzle.searchDiagnalBottomRight("AFK");
@@ -164,6 +165,12 @@ public class PuzzleTest {
         assert(locations.contains(new Point(1,1)));
         assert(locations.contains(new Point(2,2)));
 
+    }
+
+    @Test
+    public void searchDiagnalBottomRightNotFound(){
+        ArrayList<Point> locations = puzzle.searchDiagnalBottomRight("KFA");
+        assert(locations.size()==0);
     }
 
 }
