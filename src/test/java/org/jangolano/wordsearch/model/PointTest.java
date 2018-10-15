@@ -49,4 +49,10 @@ public class PointTest {
         assert(point.column-1==topLeft.column);
     }
 
+    @Test
+    public void testGetBottomRight(){
+        Point bottomrRight = point.getBottomRight(point);
+        assert(point.row+1==bottomrRight.row);
+        assert(point.column+1==bottomrRight.column);
+    }
 }

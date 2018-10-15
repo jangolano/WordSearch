@@ -50,6 +50,10 @@ public class Point {
         return new Point(point.row-1, point.column-1);
     }
 
+    //Get the point to the bottomRight
+    public static Point getBottomRight(Point point){
+        return point;
+    }
 
     @Override
     public boolean equals(Object o) {
