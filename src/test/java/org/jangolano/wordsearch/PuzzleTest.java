@@ -7,6 +7,9 @@ import org.junit.Test;
 
 import java.util.ArrayList;
 
+import static junit.framework.TestCase.fail;
+
+
 public class PuzzleTest {
 
     final char NULL_VALUE = '\u0000';  //The default null value for a character.
@@ -22,6 +25,17 @@ public class PuzzleTest {
                 { 'E', 'F', 'G', 'H'},
                 { 'I', 'J', 'K', 'L'},
                 { 'M', 'N', 'O', 'P'}
+        };
+        puzzle = new Puzzle(data);
+    }
+
+    @Test(expected = IllegalAccessException.class)
+    public void testSquarePuzzle() {
+        data = new char[][]{
+                {'A', 'B', 'C'},
+                {'E', 'F', 'G'},
+                {'I', 'J', 'K'},
+                {'M', 'N', 'O'}
         };
         puzzle = new Puzzle(data);
     }
