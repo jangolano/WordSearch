@@ -72,178 +72,82 @@ public class PuzzleTest {
         assert(instances.contains(new Point(3,3)));
     }
 
-    @Test
-    public void searchHorizontal(){
-        ArrayList<Point> locations =puzzle.searchHorizontal("FGH");
-        assert(locations.size()==3);
-        assert(locations.contains(new Point(1,1)));
-        assert(locations.contains(new Point(1, 2)));
-        assert(locations.contains(new Point(1,3)));
-    }
-
-    @Test
-    public void searchHorizontalNotFound(){
-        ArrayList<Point> locations =puzzle.searchHorizontal("FGHI");
-        assert(locations.size()==0);
-    }
-
-    @Test
-    public void searchHorizontalBackwards(){
-        ArrayList<Point> locations =puzzle.searchHorizontalBackwards("LKJI");
-        assert(locations.size()==4);
-        assert(locations.contains(new Point(2,3)));
-        assert(locations.contains(new Point(2, 2)));
-        assert(locations.contains(new Point(2,1)));
-        assert(locations.contains(new Point(2,0)));
-    }
-
-    @Test
-    public void searchHorizontalBackwardsNotFound(){
-        ArrayList<Point> locations =puzzle.searchHorizontalBackwards("FGHI");
-        assert(locations.size()==0);
-    }
-
-    @Test
-    public void searchVertical(){
-        ArrayList<Point> locations = puzzle.searchVertical("CGK");
-        assert(locations.size()==3);
-        assert(locations.contains(new Point(0,2)));
-        assert(locations.contains(new Point(1,2)));
-        assert(locations.contains(new Point(2,2)));
-    }
-
-    @Test
-    public void searchVerticalNotFound(){
-        ArrayList<Point> locations = puzzle.searchVertical("KGC");
-        assert(locations.size()==0);
-    }
-
-    @Test
-    public void searchVerticalBackwards(){
-        ArrayList<Point> locations = puzzle.searchVerticalBackwards("KGC");
-        assert(locations.size()==3);
-        assert(locations.contains(new Point(2,2)));
-        assert(locations.contains(new Point(1,2)));
-        assert(locations.contains(new Point(0,2)));
-    }
-
-    @Test
-    public void searchDiagnalTopRight(){
-        ArrayList<Point> locations = puzzle.searchDiagnalTopRight("NKH");
-        assert(locations.size()==3);
-        assert(locations.contains(new Point(3,1)));
-        assert(locations.contains(new Point(2,2)));
-        assert(locations.contains(new Point(1,3)));
-    }
-
-    @Test
-    public void searchDiagnalTopRightNotFound(){
-        ArrayList<Point> locations = puzzle.searchDiagnalTopRight("HKN");
-        assert(locations.size()==0);
-    }
-
-    @Test
-    public void searchDiagnalTopLeft(){
-        ArrayList<Point> locations = puzzle.searchDiagnalTopLeft("KFA");
-        assert(locations.size()==3);
-        assert(locations.contains(new Point(2,2)));
-        assert(locations.contains(new Point(1,1)));
-        assert(locations.contains(new Point(0,0)));
-    }
-
-
-    @Test
-    public void searchDiagnalTopLeftNotFound(){
-        ArrayList<Point> locations = puzzle.searchDiagnalTopLeft("AFK");
-        assert(locations.size()==0);
-    }
-
-
-    @Test
-    public void searchDiagnalBottomRight(){
-        ArrayList<Point> locations = puzzle.searchDiagnalBottomRight("AFK");
-        assert(locations.size()==3);
-        assert(locations.contains(new Point(0,0)));
-        assert(locations.contains(new Point(1,1)));
-        assert(locations.contains(new Point(2,2)));
-
-    }
-
-    @Test
-    public void searchDiagnalBottomRightNotFound(){
-        ArrayList<Point> locations = puzzle.searchDiagnalBottomRight("KFA");
-        assert(locations.size()==0);
-    }
-
-    @Test
-    public void searchDiangalBottomLeft(){
-        ArrayList<Point> locations = puzzle.searchDiagnalBottomLeft("GJM");
-        assert(locations.size()==3);
-        assert(locations.contains(new Point(1,2)));
-        assert(locations.contains(new Point(2,1)));
-        assert(locations.contains(new Point(3,0)));
-    }
-
-
-    @Test
-    public void searchDiangalBottomLeftNotFound(){
-        ArrayList<Point> locations = puzzle.searchDiagnalBottomLeft("MJG");
-        assert(locations.size()==0);
-    }
-
-
     @Test //Vertical
     public void searchPuzzleForWordsDHL(){
         ArrayList<Point> locations = puzzle.searchPuzzle("DHL");
         assert(locations.size()==3);
+        assert(locations.contains(new Point(0,3)));
+        assert(locations.contains(new Point(1,3)));
+        assert(locations.contains(new Point(2,3)));
     }
 
     @Test //Horizontal
     public void searchPuzzleForWordsNO(){
         ArrayList<Point> locations = puzzle.searchPuzzle("NO");
         assert(locations.size()==2);
+        assert(locations.contains(new Point(3,1)));
+        assert(locations.contains(new Point(3,2)));
     }
 
     @Test //Single Letter
     public void searchPuzzleSingleLetter(){
         ArrayList<Point> locations = puzzle.searchPuzzle("A");
         assert(locations.size()==1);
+        assert(locations.contains(new Point(0,0)));
     }
 
     @Test //Vertical Backwards
     public void searchPuzzleForWordsNJFB(){
         ArrayList<Point> locations = puzzle.searchPuzzle("NJFB");
         assert(locations.size()==4);
+        assert(locations.contains(new Point(3, 1)));
+        assert(locations.contains(new Point(2, 1)));
+        assert(locations.contains(new Point(1, 1)));
+        assert(locations.contains(new Point(0, 1)));
     }
 
     @Test //Horizontal Backwards
     public void searchPuzzleForWordsPON(){
         ArrayList<Point> locations = puzzle.searchPuzzle("PON");
         assert(locations.size()==3);
+        assert(locations.contains(new Point(3,3)));
+        assert(locations.contains(new Point(3,2)));
+        assert(locations.contains(new Point(3,1)));
     }
 
     @Test //Top Right to Bottom Left
     public void searchPuzzleForWordsJM(){
         ArrayList<Point> locations = puzzle.searchPuzzle("JM");
         assert(locations.size()==2);
+        assert(locations.contains(new Point(2,1)));
+        assert(locations.contains(new Point(3,0)));
     }
 
     @Test  //Top Left to Bottom Right
     public void searchPuzzleForWordsEJO(){
         ArrayList<Point> locations = puzzle.searchPuzzle("EJO");
         assert(locations.size()==3);
+        assert(locations.contains(new Point(1,0)));
+        assert(locations.contains(new Point(2,1)));
+        assert(locations.contains(new Point(3,2)));
     }
 
     @Test //Bottom Left to Top Right
     public void searchPuzzleForWordsEb(){
         ArrayList<Point> locations = puzzle.searchPuzzle("EB");
         assert(locations.size()==2);
+        assert(locations.contains(new Point(1,0)));
+        assert(locations.contains(new Point(0,1)));
     }
 
     @Test //Bottom Right to Top Left
     public void searchPuzzleForWordsPKFA(){
         ArrayList<Point> locations = puzzle.searchPuzzle("PKFA");
         assert(locations.size()==4);
+        assert(locations.contains(new Point(3,3)));
+        assert(locations.contains(new Point(2,2)));
+        assert(locations.contains(new Point(1,1)));
+        assert(locations.contains(new Point(0,0)));
     }
 
     @Test //Look for value that that isn't in the puzzle

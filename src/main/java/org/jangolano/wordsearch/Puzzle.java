@@ -84,42 +84,42 @@ public class Puzzle {
 
 
     //Find a character and then search to the right for the rest of the values with the word.
-    ArrayList<Point> searchHorizontal(String word){
+    private ArrayList<Point> searchHorizontal(String word){
         return findValues(word, Point::getRight);
     }
 
     //Find a character and then search to the left.
-    ArrayList<Point> searchHorizontalBackwards(String word){
+    private ArrayList<Point> searchHorizontalBackwards(String word){
         return findValues(word, Point::getLeft);
     }
 
     //Find a character and then search down
-    ArrayList<Point> searchVertical(String word){
+    private ArrayList<Point> searchVertical(String word){
         return findValues(word, Point::getBelow);
     }
 
     //Find a character and then search up
-    ArrayList<Point> searchVerticalBackwards(String word){
+    private ArrayList<Point> searchVerticalBackwards(String word){
         return findValues(word, Point::getAbove);
     }
 
     //Find a character and then search diagnal to the top right
-    ArrayList<Point> searchDiagnalTopRight(String word){
+    private ArrayList<Point> searchDiagnalTopRight(String word){
         return findValues(word, Point::getTopRight);
     }
 
     //Find a character and then search diagnal to the top left
-    ArrayList<Point> searchDiagnalTopLeft(String word){
+    private ArrayList<Point> searchDiagnalTopLeft(String word){
         return findValues(word, Point::getTopLeft);
     }
 
     //Find a character and then search diagnal to the bottom right
-    ArrayList<Point> searchDiagnalBottomRight(String word){
+    private ArrayList<Point> searchDiagnalBottomRight(String word){
         return findValues(word, Point::getBottomRight);
     }
 
     //Find a character and then search diangol to the bottom left
-    ArrayList<Point> searchDiagnalBottomLeft(String word){
+    private ArrayList<Point> searchDiagnalBottomLeft(String word){
         return findValues(word, Point::getBottomLeft);
     }
 
