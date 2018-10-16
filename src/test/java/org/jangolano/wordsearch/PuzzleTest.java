@@ -1,5 +1,7 @@
-package org.jangolano.wordsearch.model;
+package org.jangolano.wordsearch;
 
+import org.jangolano.wordsearch.Point;
+import org.jangolano.wordsearch.Puzzle;
 import org.junit.Before;
 import org.junit.Test;
 
