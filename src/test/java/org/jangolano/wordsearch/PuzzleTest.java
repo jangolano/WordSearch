@@ -56,21 +56,6 @@ public class PuzzleTest {
         assert(value ==NULL_VALUE);
     }
 
-    @Test
-    public void getLocationsOf(){
-        char [][] data = {
-                { 'A', 'B', 'C', 'D'},
-                { 'E', 'F', 'G', 'H'},
-                { 'I', 'C', 'K', 'L'},
-                { 'M', 'N', 'O', 'C'}
-        };
-        Puzzle puzzle = new Puzzle(data);
-        ArrayList<Point> instances = puzzle.getLocationsOf('C');
-        assert(instances.size()==3);
-        assert(instances.contains(new Point(0,2)));
-        assert(instances.contains(new Point(2, 1)));
-        assert(instances.contains(new Point(3,3)));
-    }
 
     @Test //Vertical
     public void searchPuzzleForWordsDHL(){

@@ -37,7 +37,7 @@ public class Puzzle {
     }
 
     //Method to get locations of a value in the array.
-    ArrayList<Point> getLocationsOf(char value){
+    private ArrayList<Point> getLocationsOf(char value){
         ArrayList<Point> instances = new ArrayList<>();
         for (int row = 0; row<data.length; row++){
 
