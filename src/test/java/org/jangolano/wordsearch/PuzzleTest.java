@@ -29,7 +29,7 @@ public class PuzzleTest {
         puzzle = new Puzzle(data);
     }
 
-    @Test(expected = IllegalAccessException.class)
+    @Test(expected = IllegalArgumentException.class)
     public void testSquarePuzzle() {
         data = new char[][]{
                 {'A', 'B', 'C'},

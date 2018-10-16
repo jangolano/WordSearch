@@ -14,7 +14,10 @@ public class Puzzle {
     char [][] data;
     final private char NULL_VALUE = '\u0000';
 
-    Puzzle(char [][] data){
+    Puzzle(char [][] data) throws IllegalArgumentException{
+        if(!checkSquare(data)){
+            throw new IllegalArgumentException("Puzzle isn't square");
+        }
         this.data = data;
     }
 
@@ -34,6 +37,16 @@ public class Puzzle {
         }catch(IndexOutOfBoundsException e){
 
         }
+    }
+
+    private boolean checkSquare(char [][] data){
+        int rows = data.length;
+        for(int row=0;row<rows;row++){
+            if(data[row].length!=rows){
+                return false;
+            }
+        }
+        return true;
     }
 
     //Method to get locations of a value in the array.
