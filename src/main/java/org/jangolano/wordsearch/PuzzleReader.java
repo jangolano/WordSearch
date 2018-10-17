@@ -1,12 +1,18 @@
 package org.jangolano.wordsearch;
 
+import java.util.ArrayList;
+
 public class PuzzleReader {
 
-    PuzzleReader(String inputFile){
+    String fileName;
 
+    PuzzleReader(String fileName){
+        this.fileName = fileName;
     }
 
-    public String [] parseHeader(){
-        return null;
+    ArrayList<String> parsePuzzle(){
+        return new ArrayList<>();
     }
+
+
 }
