@@ -37,4 +37,17 @@ public class PuzzleReaderTest {
         puzzleReader.parsePuzzle();
     }
 
+    @Test
+    public void parseHeaderTest(){
+        PuzzleReader puzzleReader = new PuzzleReader("src/test/resources/test.txt");
+        ArrayList<String> header = puzzleReader.parseHeader();
+        assert(header.size()==7);
+        assert(header.get(0).equals("CASE"));
+        assert(header.get(1).equals("HOUSE"));
+        assert(header.get(3).equals("LAMP"));
+        assert(header.get(4).equals("MARKER"));
+        assert(header.get(5).equals("PHONE"));
+        assert(header.get(5).equals("PRINTER"));
+        assert(header.get(6).equals("ROUTER"));
+    }
 }

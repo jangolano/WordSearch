@@ -23,5 +23,10 @@ public class PuzzleReader {
         return rows;
     }
 
+    //Method to parse out the header
+    public ArrayList<String> parseHeader(){
+        return new ArrayList<>();
+    }
+
 
 }
