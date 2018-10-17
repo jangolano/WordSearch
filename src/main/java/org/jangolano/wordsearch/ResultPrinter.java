@@ -13,7 +13,7 @@ public class ResultPrinter {
 
     //Get the string results
     public String getResults(String[] words, Puzzle puzzle) {
-        StringBuffer results = new StringBuffer("");
+        StringBuffer results = new StringBuffer();
         for (String word : words) {
             ArrayList<Point> points = puzzle.searchPuzzle(word);
             results.append(word + ": ");
