@@ -23,7 +23,6 @@ public class ResultPrinter {
             results.deleteCharAt(results.lastIndexOf(","));
             results.append("\n");
         }
-        results.deleteCharAt(results.lastIndexOf("\n"));
         return results.toString();
     }
 }

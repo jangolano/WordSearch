@@ -23,7 +23,7 @@ public class ResultPrinterTest {
                     "MARKER: (9,5),(10,4),(11,3),(12,2),(13,1),(14,0)\n" +
                     "PHONE: (9,0),(10,1),(11,2),(12,3),(13,4)\n" +
                     "PRINTER: (12,9),(11,8),(10,7),(9,6),(8,5),(7,4),(6,3)\n" +
-                    "ROUTER: (8,14),(8,13),(8,12),(8,11),(8,10),(8,9)";
+                    "ROUTER: (8,14),(8,13),(8,12),(8,11),(8,10),(8,9)\n";
             assert (results.equals(expectedResult));
         }catch(IOException e){
             fail();
