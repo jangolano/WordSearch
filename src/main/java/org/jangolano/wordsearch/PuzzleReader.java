@@ -12,7 +12,7 @@ public class PuzzleReader {
     }
 
     //Method to read the puzzle and parse into rows
-    public ArrayList<String> parsePuzzle() throws IOException, FileNotFoundException {
+    public ArrayList<String> parsePuzzle() throws IOException {
         File file = new File(fileName);
         BufferedReader bufferedReader = new BufferedReader(new FileReader(file));
         ArrayList<String> rows = new ArrayList<>();
