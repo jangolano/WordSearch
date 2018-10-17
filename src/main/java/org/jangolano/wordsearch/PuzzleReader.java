@@ -2,6 +2,7 @@ package org.jangolano.wordsearch;
 
 import java.io.*;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class PuzzleReader {
 
@@ -24,8 +25,11 @@ public class PuzzleReader {
     }
 
     //Method to parse out the header
-    public ArrayList<String> parseHeader(){
-        return new ArrayList<>();
+    public ArrayList<String> parseHeader() throws IOException{
+        ArrayList<String> rows = parsePuzzle();
+        String header = rows.get(0);
+        String [] words = header.split(",");
+        return new ArrayList(Arrays.asList(words));
     }
 
 
