@@ -41,15 +41,15 @@ public class PuzzleReaderTest {
     @Test
     public void parseHeaderTest() throws IOException{
         PuzzleReader puzzleReader = new PuzzleReader("src/test/resources/test.txt");
-        ArrayList<String> header = puzzleReader.parseHeader();
-        assert(header.size()==7);
-        assert(header.get(0).equals("CASE"));
-        assert(header.get(1).equals("HOUSE"));
-        assert(header.get(2).equals("LAMP"));
-        assert(header.get(3).equals("MARKER"));
-        assert(header.get(4).equals("PHONE"));
-        assert(header.get(5).equals("PRINTER"));
-        assert(header.get(6).equals("ROUTER"));
+        String [] header = puzzleReader.parseHeader();
+        assert(header.length==7);
+        assert(header[0].equals("CASE"));
+        assert(header[1].equals("HOUSE"));
+        assert(header[2].equals("LAMP"));
+        assert(header[3].equals("MARKER"));
+        assert(header[4].equals("PHONE"));
+        assert(header[5].equals("PRINTER"));
+        assert(header[6].equals("ROUTER"));
     }
 
     /* This test is very comprehensive, testing to make sure that each value in the puzzle

@@ -2,7 +2,6 @@ package org.jangolano.wordsearch;
 
 import java.io.*;
 import java.util.ArrayList;
-import java.util.Arrays;
 
 public class PuzzleReader {
 
@@ -25,11 +24,10 @@ public class PuzzleReader {
     }
 
     //Method to parse out the header
-    public ArrayList<String> parseHeader() throws IOException{
+    public String [] parseHeader() throws IOException{
         ArrayList<String> rows = parsePuzzle();
         String header = rows.get(0);
-        String [] words = header.split(",");
-        return new ArrayList(Arrays.asList(words));
+        return header.split(",");
     }
 
     //Method to get the puzzle data
@@ -38,13 +36,18 @@ public class PuzzleReader {
         char [][] results = new char[rows.size()-1][];
         for(int row =1;row<rows.size();row++){
              String [] rowData = rows.get(row).split(",");
-             String s ="";
-             for(String n:rowData){
-                 s+=n;
-             }
-             results[row-1]=s.toCharArray();
+             results[row-1]=getCharArray(rowData);
         }
         return results;
+    }
+
+    //Method to convert String array to Character Data.
+    private char [] getCharArray(String[] rowData) {
+        String s ="";
+        for(String n:rowData){
+            s+=n;
+        }
+        return s.toCharArray();
     }
 
 }
