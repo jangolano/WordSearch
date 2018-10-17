@@ -5,14 +5,16 @@ import java.util.ArrayList;
 
 public class PuzzleReader {
 
-    String fileName;
+    private String fileName;
 
-    PuzzleReader(String fileName){
+    private ArrayList<String> rows;
+    PuzzleReader(String fileName) throws IOException{
         this.fileName = fileName;
+        this.rows = parsePuzzle();
     }
 
     //Method to read the puzzle and parse into rows
-    public ArrayList<String> parsePuzzle() throws IOException {
+    private ArrayList<String> parsePuzzle() throws IOException {
         File file = new File(fileName);
         BufferedReader bufferedReader = new BufferedReader(new FileReader(file));
         ArrayList<String> rows = new ArrayList<>();
@@ -24,15 +26,13 @@ public class PuzzleReader {
     }
 
     //Method to parse out the header
-    public String [] parseHeader() throws IOException{
-        ArrayList<String> rows = parsePuzzle();
+    public String [] parseHeader() {
         String header = rows.get(0);
         return header.split(",");
     }
 
     //Method to get the puzzle data
-    public char [][] getPuzzleData() throws IOException{
-        ArrayList<String> rows = parsePuzzle();
+    public char [][] getPuzzleData(){
         char [][] results = new char[rows.size()-1][];
         for(int row =1;row<rows.size();row++){
              String [] rowData = rows.get(row).split(",");
