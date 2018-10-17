@@ -34,8 +34,17 @@ public class PuzzleReader {
 
     //Method to get the puzzle data
     public char [][] getPuzzleData() throws IOException{
-        char [][] data = {{'A'},{'B'}};
-        return data;
+        ArrayList<String> rows = parsePuzzle();
+        char [][] results = new char[rows.size()-1][];
+        for(int row =1;row<rows.size();row++){
+             String [] rowData = rows.get(row).split(",");
+             String s ="";
+             for(String n:rowData){
+                 s+=n;
+             }
+             results[row-1]=s.toCharArray();
+        }
+        return results;
     }
 
 }
