@@ -3,13 +3,14 @@ package org.jangolano.wordsearch;
 import org.junit.Test;
 
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.ArrayList;
 
 public class PuzzleReaderTest {
 
     @Test
-    public void parsePuzzleTest(){
-        PuzzleReader puzzleReader = new PuzzleReader("test.txt");
+    public void parsePuzzleTest() throws IOException {
+        PuzzleReader puzzleReader = new PuzzleReader("src/test/resources/test.txt");
         ArrayList<String> rows = puzzleReader.parsePuzzle();
         assert(rows.size()==16);
         assert(rows.get(0).equals("CASE,HOUSE,LAMP,MARKER,PHONE,PRINTER,ROUTER"));
@@ -31,7 +32,7 @@ public class PuzzleReaderTest {
     }
 
     @Test(expected = FileNotFoundException.class)
-    public void parsePuzzleNotFound(){
+    public void parsePuzzleNotFound()throws IOException{
         PuzzleReader puzzleReader = new PuzzleReader("invalid.txt");
         puzzleReader.parsePuzzle();
     }
