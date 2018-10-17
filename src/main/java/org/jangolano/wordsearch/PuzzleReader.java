@@ -32,5 +32,10 @@ public class PuzzleReader {
         return new ArrayList(Arrays.asList(words));
     }
 
+    //Method to get the puzzle data
+    public char [][] getPuzzleData() throws IOException{
+        char [][] data = {{'A'},{'B'}};
+        return data;
+    }
 
 }
