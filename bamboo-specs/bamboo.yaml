@@ -1,7 +1,7 @@
 project:
   key: TEST
   plan:
-    key: Test2
+    key: TEST3
     name: Dragon Slayer Quest
 dockerImage: postgres
 stages:
